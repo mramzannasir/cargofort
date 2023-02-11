@@ -1,7 +1,26 @@
 /* eslint-disable @next/next/no-img-element */
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import { useEffect } from 'react';
+import { motion } from "framer-motion";
+import { HiOutlineArrowRight } from "react-icons/hi"
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+
+const animationConfiguration = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  exit: { opacity: 0 },
+};
+
 export default function Home() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1600,
+    });
+    AOS.refresh();
+  }, []);
   const router = useRouter();
   return (
     <>
@@ -11,18 +30,66 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className='wrapper'>
-        <div className='absolute top-4 left-0 w-full'>
-          <img src="logo.png" className='mx-auto' alt="" />
+      <main className="wrapper">
+        <div onClick={(()=>router.replace("/"))} className="absolute top-4 left-0 w-full">
+          <img src="/Logo.png" className="mx-auto" alt="" />
         </div>
-        <div onClick={(() => router.replace("/cargo/slide2"))} className=" card cursor-pointer contain relative flex-col justify-center items-center">
-          <h1 className=' text-darkBrown heading text-center'>Cargo</h1>
-          <p className='text-darkBrown title'>Question Flow</p>
-          <div>
-            <img src="left-cloud.png" className='absolute top-6 sm:-left-11  left-0 z-[-1] h-[30px] w-[125px] sm:h-auto sm:w-auto' alt="" srcset="" />
-            <img src="right-cloud.png" className='absolute top-3 sm:-right-8 right-0 z-[-1] h-[30px] w-[125px] sm:h-auto sm:w-auto' alt="" srcset="" />
+        <motion.div
+          variants={animationConfiguration}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          transition={{ duration: 1 }}
+          className=" card  contain relative flex-col justify-center items-center">
+          <div className="w-full md:w-[70%] xl:w-[60%]">
+            <h1 className=" text-darkBrown sub-title text-center">
+              Select Carriage Liabilities
+            </h1>
           </div>
-        </div>
+          <motion className="w-[95%] md:w-[70%] flex-col gap-3 flex  my-[30px] sm:my-[35px] lg:my-[30px]">
+            <div data-aos="zoom-in" onClick={(() => router.replace('/cargo'))} className="w-full cursor-pointer transition-all duration-300 hover:shadow-md rounded-[40px]  hover:scale-105 outline-none border-none bg-white py-2 sm:py-3 4xl:py-3  flex items-center gap-3 justify-between px-5">
+              <div>
+                <p className="text-darkBrown des">CARGO</p>
+              </div>
+              <div className='text-darkBrown text-2xl'>
+                < HiOutlineArrowRight />
+              </div>
+            </div>
+            <div data-aos="zoom-in" className="w-full rounded-[40px] cursor-pointer transition-all duration-300 hover:shadow-md hover:scale-105 outline-none border-none bg-white py-2 sm:py-3 4xl:py-3 flex items-center gap-3 justify-between px-5">
+              <div>
+                <p className="text-darkBrown des"> Carriage Liabilities Carriage </p>
+              </div>
+              <div className='text-darkBrown text-2xl'>
+                < HiOutlineArrowRight />
+              </div>
+            </div>
+            <div data-aos="zoom-in" className="w-full rounded-[40px] cursor-pointer transition-all duration-300 hover:shadow-md hover:scale-105 outline-none border-none bg-white py-2 sm:py-3 4xl:py-3 flex items-center  justify-between px-5">
+              <div>
+                <p className="text-darkBrown des">Carriage Liabilities Forwarding </p>
+              </div>
+              <div className='text-darkBrown text-2xl'>
+                < HiOutlineArrowRight />
+              </div>
+            </div>
+          </motion>
+          <div className="flex justify-center items-center w-full  md:mt-5">
+          </div>
+          {/* position absolute  */}
+          <div>
+            <img
+              src="/left-cloud.png"
+              className="absolute top-6 -left-11 md:top-[8rem] md:-left-[7rem] lg:-left-[9rem] z-[-1]"
+              alt=""
+              srcset=""
+            />
+            <img
+              src="/right-cloud.png"
+              className="absolute top-6 md:top-4 -right-8 z-[-1] md:-right-[10rem]"
+              alt=""
+              srcset=""
+            />
+          </div>
+        </motion.div>
       </main>
     </>
   )
