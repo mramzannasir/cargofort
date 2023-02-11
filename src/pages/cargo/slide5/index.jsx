@@ -26,7 +26,7 @@ const index = () => {
     <>
       <main className="wrapper">
         <div className="absolute top-4 left-0 w-full">
-          <img src="/logo.png" className="mx-auto" alt="" />
+          <img src="/Logo.png" className="mx-auto" alt="" />
         </div>
         <motion.div
           variants={animationConfiguration}
