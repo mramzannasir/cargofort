@@ -31,7 +31,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="wrapper">
-        <div onClick={(()=>router.replace("/"))} className="absolute top-4 left-0 w-full">
+        <div onClick={(() => router.replace("/"))} className="absolute top-4 left-0 w-full">
           <img src="/Logo.png" className="mx-auto" alt="" />
         </div>
         <motion.div

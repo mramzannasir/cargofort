@@ -7,7 +7,7 @@
     @apply overflow-hidden flex flex-col h-screen w-full justify-center items-center bg-[url(/background.png)] bg-cover md:bg-[length:100%_100%] bg-center bg-no-repeat;
 }
 .contain{
-    @apply  w-[96%] md:w-[75%] xl:w-[65%] 2xl:max-w-[60%]  3xl:w-[55%] 4xl:w-[45%] h-[600px] md:h-[550px] flex;
+    @apply  w-[96%] md:w-[75%] xl:w-[65%] 2xl:max-w-[60%]  3xl:w-[55%] 4xl:w-[45%] h-[500px] md:h-[550px] flex;
 }
 .heading{
     @apply text-[40px] font-black sm:text-[45px]  md:text-[50px] lg:text-[55px] 2xl:text-[66px] 4xl:text-[70px];
