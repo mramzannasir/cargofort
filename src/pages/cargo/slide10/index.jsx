@@ -74,7 +74,7 @@ const index = () => {
               <div>Back</div>
             </button>
             <button
-              onClick={() => router.push("slide11")}
+              onClick={() => router.push("Slide11")}
               className={`flex gap-1 h-[3rem] w-[7rem] text-white text-[16px] ${
                 show ? "enabled" : ""
               }  font-semibold justify-center items-center bg-nextBrown rounded-[40px]`}>
