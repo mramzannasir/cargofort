@@ -16,6 +16,18 @@ const animationConfiguration = {
 const index = () => {
   const router = useRouter();
   const [show, setShow] = useState(false);
+  const [inputValue, setInputValue] = useState("");
+  const [inputValue1, setInputValue1] = useState("");
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
+  const handleInputChange1 = (event) => {
+    setInputValue1(event.target.value);
+  };
+  const handleInputChange2 = (event) => {
+    setInputValue(event.target.value);
+  };
+
 
   return (
     <>
@@ -40,9 +52,8 @@ const index = () => {
               <div className="w-full rounded-[40px]  outline-none border-none bg-white py-2 sm:py-3 4xl:py-3  flex items-center gap-3 justify-start px-5">
                 <div
                   onClick={() => setShow(1)}
-                  className={`relative bg-lightBrow cursor-pointer hover:bg-selectBrown ${
-                    show === 1 ? "bg-selectBrown" : ""
-                  } h-[29px] w-[29px] sm:h-[30px] sm:w-[30px] rounded-full`}>
+                  className={`relative bg-lightBrow cursor-pointer hover:bg-selectBrown ${show === 1 ? "bg-selectBrown" : ""
+                    } h-[29px] w-[29px] sm:h-[30px] sm:w-[30px] rounded-full`}>
                   <input
                     type="checkbox"
                     className="appearance-none  cursor-pointer rounded-full"></input>
@@ -59,9 +70,8 @@ const index = () => {
               <div className="w-full rounded-[40px]  outline-none border-none bg-white py-2 sm:py-3 4xl:py-3  flex items-center gap-3 justify-start px-5">
                 <div
                   onClick={() => setShow(2)}
-                  className={`relative bg-lightBrow cursor-pointer hover:bg-selectBrown ${
-                    show === 2 ? "bg-selectBrown" : ""
-                  } h-[29px] w-[29px] sm:h-[30px] sm:w-[30px] rounded-full`}>
+                  className={`relative bg-lightBrow cursor-pointer hover:bg-selectBrown ${show === 2 ? "bg-selectBrown" : ""
+                    } h-[29px] w-[29px] sm:h-[30px] sm:w-[30px] rounded-full`}>
                   <input
                     type="checkbox"
                     className="appearance-none  cursor-pointer    rounded-full"></input>
@@ -78,9 +88,8 @@ const index = () => {
               <div className="w-full rounded-[40px] outline-none border-none bg-white py-2 sm:py-3 4xl:py-3  flex items-center gap-3 justify-start px-5">
                 <div
                   onClick={() => setShow(3)}
-                  className={`relative  bg-lightBrow cursor-pointer  hover:bg-selectBrown ${
-                    show === 3 ? "bg-selectBrown" : ""
-                  } h-[29px] w-[29px] sm:h-[30px] sm:w-[30px] rounded-full`}>
+                  className={`relative  bg-lightBrow cursor-pointer  hover:bg-selectBrown ${show === 3 ? "bg-selectBrown" : ""
+                    } h-[29px] w-[29px] sm:h-[30px] sm:w-[30px] rounded-full`}>
                   <input
                     type="checkbox"
                     className="appearance-none  cursor-pointer     rounded-full"></input>
@@ -107,11 +116,13 @@ const index = () => {
             <div className="w-[95%] md:w-[60%] lg:w-[85%] flex-col gap-3 flex lg:flex-row  ">
               <input
                 type="text"
+                value={inputValue1} onChange={handleInputChange1}
                 className="rounded-[40px] px-4 text-[16px] placeholder:text-darkBrown placeholder:opacity-50 md:text-[18px] text py-4 bg-white border-none outline-none  h-full w-full "
                 placeholder="From..."
               />
               <input
                 type="text"
+                value={inputValue} onChange={handleInputChange}
                 className="rounded-[40px] px-4 text-[16px] placeholder:text-darkBrown placeholder:opacity-50 md:text-[18px] text py-4 bg-white border-none outline-none  h-full w-full "
                 placeholder="To..."
               />
@@ -128,10 +139,10 @@ const index = () => {
               <div>Back</div>
             </button>
             <button
+              disabled={!(show && inputValue && inputValue1)}
               onClick={() => router.push("slide9")}
-              className={`flex gap-1 h-[3rem] w-[7rem] text-white text-[16px] ${
-                show ? "enabled" : ""
-              }  font-semibold justify-center items-center bg-nextBrown rounded-[40px]`}>
+              className={`flex gap-1 h-[3rem] w-[7rem] text-white text-[16px] ${show ? "enabled" : ""
+                }  font-semibold justify-center items-center bg-nextBrown rounded-[40px]`}>
               <div>Next</div>
               <div className="">
                 <MdOutlineNavigateNext size={30} />

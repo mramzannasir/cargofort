@@ -15,6 +15,14 @@ const animationConfiguration = {
 const index = () => {
   const router = useRouter();
   const [show, setShow] = useState(false);
+  const [inputValue, setInputValue] = useState("");
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
+  const [inputValue2, setInputValue2] = useState("");
+  const handleInputChange2 = (event) => {
+    setInputValue2(event.target.value);
+  };
   return (
     <>
       <main className="wrapper">
@@ -37,6 +45,8 @@ const index = () => {
             <div className="w-[95%] md:w-[40%] lg:w-[30%] flex-col gap-3 flex   ">
               <div className="w-full">
                 <input
+                  value={inputValue}
+                  onChange={handleInputChange}
                   type="text"
                   className="rounded-[40px]  placeholder:text-darkBrown placeholder:opacity-50 px-4 text-[16px] md:text-[18px] text py-5 bg-white border-none outline-none  h-full w-full "
                   placeholder="Name"
@@ -44,6 +54,8 @@ const index = () => {
               </div>
               <div className="w-full">
                 <input
+                  value={inputValue2}
+                  onChange={handleInputChange2}
                   type="text"
                   className="rounded-[40px]  placeholder:text-darkBrown placeholder:opacity-50 px-4 text-[16px] md:text-[18px] text py-5 bg-white border-none outline-none  h-full w-full "
                   placeholder="UIC/ VAT..."
@@ -54,7 +66,7 @@ const index = () => {
           </div>
           <div className="flex sm:justify-between justify-center gap-3 mt-2 md:mt-0  items-center w-[98%]  sm:w-[90%] xl:mt-5">
             <button
-              onClick={() => router.push("slide2")}
+              onClick={() => router.push("slide3")}
               className={`flex gap-1 h-[3rem] w-[7rem] text-[#B67E4A] text-[16px] 
                  font-semibold justify-center items-center bg-backBrown  rounded-[40px]`}>
               <div className="">
@@ -63,6 +75,7 @@ const index = () => {
               <div>Back</div>
             </button>
             <button
+              disabled={inputValue <= 0 || inputValue2 <= 0}
               onClick={() => router.replace("slide4")}
               className={`flex gap-1 h-[3rem] w-[7rem] text-white text-[16px]  font-semibold justify-center items-center bg-nextBrown rounded-[40px]`}>
               <div>Next</div>

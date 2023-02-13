@@ -7,6 +7,7 @@ import { FiCheck } from "react-icons/fi";
 import { MdOutlineNavigateNext } from "react-icons/md";
 import { MdNavigateBefore } from "react-icons/md";
 import { BsChevronRight } from "react-icons/bs";
+
 import { BsChevronLeft } from "react-icons/bs";
 const animationConfiguration = {
   initial: { opacity: 0 },
@@ -14,27 +15,23 @@ const animationConfiguration = {
   exit: { opacity: 0 },
 };
 const index = () => {
-  const router = useRouter();
-  const [show, setShow] = useState(false);
-  const [show1, setShow1] = useState(false);
-  const [show2, setShow2] = useState(false);
-  const [show3, setShow3] = useState(false);
 
-  const nextClick = () => {
-    if (show) {
-      router.replace("slide5");
-    }
-    if (show1) {
-      router.replace("slide5");
-    }
-    if (show2) {
-      router.replace("slide5");
-    }
-    if (show3) {
-      router.replace("slide5");
-    }
+ const router = useRouter(); 
+  const [inputValue, setInputValue] = useState("");
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
   };
-
+  const handleInputChange1 = (event) => {
+    setInputValue1(event.target.value);
+  };
+  const handleInputChange2 = (event) => {
+    setInputValue2(event.target.value);
+  };
+  const [inputValue1, setInputValue1] = useState("");
+  const [inputValue2, setInputValue2] = useState("");
+  const nextClick = () => {
+    router.replace("slide8");
+  };
   return (
     <>
       <main className="wrapper">
@@ -58,16 +55,20 @@ const index = () => {
             <div className="w-[95%] md:w-[60%] lg:w-[85%] flex-col gap-3 flex lg:flex-row  ">
               <input
                 type="text"
+                value={inputValue} onChange={handleInputChange}
                 className="rounded-[40px] placeholder:text-darkBrown placeholder:opacity-50  px-4 text-[16px] md:text-[18px] text py-5 bg-white border-none outline-none  h-full w-full "
                 placeholder="Number of palletes..."
               />
               <input
                 type="text"
+
+                value={inputValue1} onChange={handleInputChange1}
                 className="rounded-[40px]  placeholder:text-darkBrown placeholder:opacity-50 px-4 text-[16px] md:text-[18px] text py-5 bg-white border-none outline-none  h-full w-full "
                 placeholder="Packages..."
               />
               <input
                 type="text"
+                value={inputValue2} onChange={handleInputChange2}
                 className="rounded-[40px]  placeholder:text-darkBrown placeholder:opacity-50 px-4 text-[16px] md:text-[18px] text py-5 bg-white border-none outline-none  h-full w-full "
                 placeholder="Parcells..."
               />
@@ -75,7 +76,7 @@ const index = () => {
           </div>
           <div className="flex sm:justify-between justify-center gap-3  md:mt-0  items-center w-[98%]  sm:w-[90%] xl:mt-5">
             <button
-              onClick={() => router.push("slide5")}
+              onClick={() => router.push("slide6")}
               className={`flex gap-1 h-[3rem] w-[7rem] text-[#B67E4A] text-[16px] 
                  font-semibold justify-center items-center bg-backBrown  rounded-[40px]`}>
               <div className="">
@@ -84,10 +85,9 @@ const index = () => {
               <div>Back</div>
             </button>
             <button
-              onClick={() => router.push("slide8")}
-              className={`flex gap-1 h-[3rem] w-[7rem] text-white text-[16px] ${
-                show ? "enabled" : ""
-              }  font-semibold justify-center items-center bg-nextBrown rounded-[40px]`}>
+              onClick={nextClick}
+              disabled={inputValue <= 0 || inputValue1 <= 0 || inputValue1 <= 0}
+              className={`flex gap-1 h-[3rem] w-[7rem] text-white text-[16px]  font-semibold justify-center items-center bg-nextBrown rounded-[40px]`}>
               <div>Next</div>
               <div className="">
                 <MdOutlineNavigateNext size={30} />

@@ -7,7 +7,6 @@ import { FiCheck } from "react-icons/fi";
 import { MdOutlineNavigateNext } from "react-icons/md";
 import { MdNavigateBefore } from "react-icons/md";
 import { BsChevronUp } from "react-icons/bs";
-
 import { BsChevronDown } from "react-icons/bs";
 const animationConfiguration = {
   initial: { opacity: 0 },
@@ -15,6 +14,10 @@ const animationConfiguration = {
   exit: { opacity: 0 },
 };
 const index = () => {
+  const [inputValue, setinputValue] = useState("");
+  const handleInputChange = (event) => {
+    setinputValue(event.target.value);
+  };
   const router = useRouter();
   const [show, setShow] = useState(false);
   return (
@@ -40,6 +43,7 @@ const index = () => {
             <div className="w-[95%] md:w-[60%] lg:w-[85%]  flex-col gap-3 flex lg:flex-row  ">
               <input
                 type="text"
+                value={inputValue} onChange={handleInputChange}
                 className="rounded-[40px] px-4 text-[16px] md:text-[18px] placeholder:text-darkBrown placeholder:opacity-50 text py-4 bg-white border-none outline-none  h-full w-full "
                 placeholder="Insert Cargo value as per commercial invoice..."
               />
@@ -89,6 +93,7 @@ const index = () => {
               <div>Back</div>
             </button>
             <button
+            disabled={!inputValue}
               onClick={() => router.push("slide10")}
               className={`flex gap-1 h-[3rem] w-[7rem] text-white text-[16px] ${
                 show ? "enabled" : ""

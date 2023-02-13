@@ -22,19 +22,18 @@ const index = () => {
 
   const nextClick = () => {
     if (show) {
-      router.replace("slide5");
+      router.replace("slide7");
     }
     if (show1) {
-      router.replace("slide5");
+      router.replace("slide7");
     }
     if (show2) {
-      router.replace("slide5");
+      router.replace("slide7");
     }
     if (show3) {
-      router.replace("slide5");
+      router.replace("slide7");
     }
   };
-
   return (
     <>
       <main className="wrapper">
@@ -46,7 +45,7 @@ const index = () => {
           initial="initial"
           animate="animate"
           exit="exit"
-          transition={{ duration: 0.8}}
+          transition={{ duration: 0.8 }}
           className=" card  contain relative flex-col justify-center items-center">
           <div className="w-full md:w-[70%] xl:w-[70%]">
             <h1 className=" text-darkBrown sub-title text-center">
@@ -66,9 +65,8 @@ const index = () => {
               <div className="w-full rounded-[40px] outline-none border-none bg-white py-2 sm:py-3 4xl:py-3 flex items-center gap-3 justify-start px-5">
                 <div
                   onClick={() => setShow2(!show2)}
-                  className={`relative bg-lightBrow cursor-pointer hover:bg-selectBrown ${
-                    show2 ? "bg-selectBrown" : ""
-                  } h-[29px] w-[29px] sm:h-[30px] sm:w-[30px] rounded-full`}>
+                  className={`relative bg-lightBrow cursor-pointer hover:bg-selectBrown ${show2 ? "bg-selectBrown" : ""
+                    } h-[29px] w-[29px] sm:h-[30px] sm:w-[30px] rounded-full`}>
                   <input
                     type="checkbox"
                     className="appearance-none  cursor-pointer    rounded-full"></input>
@@ -85,9 +83,8 @@ const index = () => {
               <div className="w-full rounded-[40px] outline-none border-none bg-white py-2 sm:py-3 4xl:py-3 flex items-center gap-3 justify-start px-5">
                 <div
                   onClick={() => setShow3(!show3)}
-                  className={`relative bg-lightBrow cursor-pointer hover:bg-selectBrown ${
-                    show3 ? "bg-selectBrown" : ""
-                  } h-[29px] w-[29px] sm:h-[30px] sm:w-[30px] rounded-full`}>
+                  className={`relative bg-lightBrow cursor-pointer hover:bg-selectBrown ${show3 ? "bg-selectBrown" : ""
+                    } h-[29px] w-[29px] sm:h-[30px] sm:w-[30px] rounded-full`}>
                   <input
                     type="checkbox"
                     className="appearance-none  cursor-pointer    rounded-full"></input>
@@ -105,6 +102,7 @@ const index = () => {
           </div>
           <div className="flex sm:justify-between justify-center gap-3 mt-2 md:mt-0  items-center w-[98%]  sm:w-[90%] xl:mt-5">
             <button
+            
               onClick={() => router.push("slide5")}
               className={`flex gap-1 h-[3rem] w-[7rem] text-[#B67E4A] text-[16px] 
                  font-semibold justify-center items-center bg-backBrown  rounded-[40px]`}>
@@ -114,10 +112,9 @@ const index = () => {
               <div>Back</div>
             </button>
             <button
-              onClick={() => router.push("slide7")}
-              className={`flex gap-1 h-[3rem] w-[7rem] text-white text-[16px] ${
-                show ? "enabled" : ""
-              }  font-semibold justify-center items-center bg-nextBrown rounded-[40px]`}>
+              onClick={nextClick}
+              className={`flex gap-1 h-[3rem] w-[7rem] text-white text-[16px] ${show ? "enabled" : ""
+                }  font-semibold justify-center items-center bg-nextBrown rounded-[40px]`}>
               <div>Next</div>
               <div className="">
                 <MdOutlineNavigateNext size={30} />

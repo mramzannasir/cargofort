@@ -7,16 +7,25 @@ import { FiCheck } from "react-icons/fi";
 import { MdOutlineNavigateNext } from "react-icons/md";
 import { MdNavigateBefore } from "react-icons/md";
 import { BsChevronUp } from "react-icons/bs";
-
 import { BsChevronDown } from "react-icons/bs";
 const animationConfiguration = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
   exit: { opacity: 0 },
 };
+
+
 const index = () => {
   const router = useRouter();
   const [show, setShow] = useState(false);
+  const [inputValue, setInputValue] = useState("");
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
+  const [inputValue2, setInputValue2] = useState("");
+  const handleInputChange2 = (event) => {
+    setInputValue2(event.target.value);
+  };
   return (
     <>
       <main className="wrapper">
@@ -38,6 +47,8 @@ const index = () => {
           <div className="my-[30px] sm:my-[35px] lg:my-[30px] w-[100%] flex justify-center items-center flex-col">
             <div className="w-[95%] md:w-[60%] lg:w-[45%] flex-col flex ">
               <input
+                value={inputValue}
+                onChange={handleInputChange}
                 type="email"
                 className="rounded-[40px] placeholder:text-darkBrown placeholder:opacity-50 px-4 text-[16px] md:text-[18px] text-darkBrown border-darkBrown border-[1.5px]  bg-white outline-none py-3 w-full"
                 placeholder="E-mail"
@@ -46,6 +57,8 @@ const index = () => {
             <div className="w-[95%] md:w-[60%] lg:w-[45%] flex-col flex mt-4 md:mt-6 relative ">
               <div className="w-full flex justify-between items-center bg-white px-4 rounded-[40px] py-3 ">
                 <input
+                  value={inputValue2}
+                  onChange={handleInputChange2}
                   className="sub text-darkBrown placeholder:text-darkBrown placeholder:opacity-50 outline-none border-none w-full"
                   placeholder="Name of Company"></input>
                 <div>
@@ -74,10 +87,10 @@ const index = () => {
               <div>Back</div>
             </button>
             <button
+              disabled={inputValue <= 0 || inputValue2 <= 0}
               onClick={() => router.push("Slide11")}
-              className={`flex gap-1 h-[3rem] w-[7rem] text-white text-[16px] ${
-                show ? "enabled" : ""
-              }  font-semibold justify-center items-center bg-nextBrown rounded-[40px]`}>
+              className={`flex gap-1 h-[3rem] w-[7rem] text-white text-[16px] ${show ? "enabled" : ""
+                }  font-semibold justify-center items-center bg-nextBrown rounded-[40px]`}>
               <div>Next</div>
               <div className="">
                 <MdOutlineNavigateNext size={30} />
