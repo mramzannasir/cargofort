@@ -15,24 +15,11 @@ const animationConfiguration = {
 };
 const index = () => {
   const router = useRouter();
-  const [show, setShow] = useState(false);
-  const [show1, setShow1] = useState(false);
-  const [show2, setShow2] = useState(false);
-  const [show3, setShow3] = useState(false);
-
-  const nextClick = () => {
-    if (show) {
-      router.replace("slide5");
-    }
-    if (show1) {
-      router.replace("slide5");
-    }
-    if (show2) {
-      router.replace("slide5");
-    }
-    if (show3) {
-      router.replace("slide5");
-    }
+  const [show, setShow] = useState("");
+  const [go, setGo] = useState(false);
+  const handleChange = (e) => {
+    setShow(e.target.value);
+    setGo(!go);
   };
 
   return (
@@ -48,34 +35,26 @@ const index = () => {
           exit="exit"
           transition={{ duration: 0.8 }}
           className=" card  contain relative flex-col justify-center items-center">
-          <div className="w-full md:w-[70%] xl:w-[70%]">
+          <div className="w-full md:w-[70%] xl:w-[60%]">
             <h1 className=" text-darkBrown sub-title text-center">
-              To measure your protection better, can you tell us what is the
-              exact name of your cargo and whether it is new or used?
+              How many trucks do you own?
             </h1>
           </div>
+
           <div className="my-[30px] sm:my-[35px] lg:my-[30px] w-[100%] flex justify-center items-center flex-col">
-            <div className="w-[95%] md:w-[60%] lg:w-[85%] flex-col gap-3 flex lg:flex-row  ">
+            <div className="w-[95%] md:w-[40%] lg:w-[30%]   text-darkBrown  ">
               <input
                 type="text"
-                className="rounded-[40px] px-4 text-[16px] md:text-[18px] text py-5 bg-white border-none outline-none  h-full w-full "
-                placeholder="Number of palletes..."
-              />
-              <input
-                type="text"
-                className="rounded-[40px] px-4 text-[16px] md:text-[18px] text py-5 bg-white border-none outline-none  h-full w-full "
-                placeholder="Packages..."
-              />
-              <input
-                type="text"
-                className="rounded-[40px] px-4 text-[16px] md:text-[18px] text py-5 bg-white border-none outline-none  h-full w-full "
-                placeholder="Parcells..."
+                value={show}
+                onChange={handleChange}
+                className="rounded-[40px] px-4 text-[16px] md:text-[18px] text placeholder:text-darkBrown placeholder:opacity-50 py-5 bg-white border-none outline-none  h-full w-full "
+                placeholder="Number of trucks..."
               />
             </div>
           </div>
-          <div className="flex sm:justify-between justify-center gap-3  md:mt-0  items-center w-[98%]  sm:w-[90%] xl:mt-5">
+          <div className="flex sm:justify-between justify-center gap-3 mt-2 md:mt-0  items-center w-[98%]  sm:w-[90%] xl:mt-5">
             <button
-              onClick={() => router.push("slide5")}
+              onClick={() => router.push("slide4")}
               className={`flex gap-1 h-[3rem] w-[7rem] text-[#B67E4A] text-[16px] 
                  font-semibold justify-center items-center bg-backBrown  rounded-[40px]`}>
               <div className="">
@@ -84,10 +63,9 @@ const index = () => {
               <div>Back</div>
             </button>
             <button
-              onClick={() => router.push("slide8")}
-              className={`flex gap-1 h-[3rem] w-[7rem] text-white text-[16px] ${
-                show ? "enabled" : ""
-              }  font-semibold justify-center items-center bg-nextBrown rounded-[40px]`}>
+              disabled={!go}
+              onClick={() => router.push("slide6")}
+              className={`flex gap-1 h-[3rem] w-[7rem] text-white text-[16px] font-semibold justify-center items-center bg-nextBrown rounded-[40px]`}>
               <div>Next</div>
               <div className="">
                 <MdOutlineNavigateNext size={30} />
@@ -108,6 +86,7 @@ const index = () => {
               srcset=""
             />
           </div>
+         
         </motion.div>
       </main>
     </>

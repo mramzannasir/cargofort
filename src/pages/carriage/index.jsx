@@ -19,9 +19,12 @@ const index = () => {
           animate="animate"
           exit="exit"
           transition={{ duration: 0.8 }}
-          onClick={() => router.replace("/cargo/slide2")}
+          onClick={() => router.replace("/carriage/slide2")}
           className=" card cursor-pointer contain relative flex-col justify-center items-center">
-          <h1 className=" text-darkBrown heading text-center">Cargo</h1>
+          <h1 className=" text-darkBrown heading text-center">
+            {" "}
+            Carriage Liabilities (Carriage)
+          </h1>
           <p className="text-darkBrown title">Question Flow</p>
           <div>
             <img

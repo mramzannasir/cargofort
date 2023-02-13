@@ -32,27 +32,28 @@ const index = () => {
           className=" card  contain relative flex-col justify-center items-center">
           <div className="w-full md:w-[70%] xl:w-[80%]">
             <h1 className=" text-darkBrown sub-title text-center">
-              You&apos;ve almost arrived at destination Best Price, just tell us
-              how much is your cargo worth:
+              That&lsquo;s awesome! <br className="hidden md:block" />
+              Would you care to tell
+              us their types?
             </h1>
           </div>
           <div className="my-[30px] sm:my-[35px] lg:my-[30px] w-[100%] flex justify-center items-center flex-col">
-            <div className="w-[95%] md:w-[60%] lg:w-[85%]  flex-col gap-3 flex lg:flex-row  ">
+            <div className="w-[95%] md:w-[50%] lg:w-[60%]  flex-col gap-3 flex lg:flex-row  ">
               <input
                 type="text"
-                className="rounded-[40px] px-4 text-[16px] md:text-[18px] text py-4 bg-white border-none outline-none  h-full w-full "
-                placeholder="Insert Cargo value as per commercial invoice..."
+                className="rounded-[40px] text-darkBrown  px-4 placeholder:text-darkBrown placeholder:opacity-50 text-[16px] md:text-[18px] text py-4 bg-white border-none outline-none  h-full w-full lg:w-[30%]"
+                placeholder="Number of trucks..."
               />
-              <div className="w-full lg:w-[45%]">
+              <div className="w-full lg:w-[60%]">
                 <div className="rounded-[40px] px-4 text-[16px] md:text-[18px] text py-4 bg-white border-none outline-none  h-full w-full flex justify-between items-center relative">
-                  <div className="sub text-darkBrown">Choose Currency</div>
+                  <div className="sub w-full text-darkBrown text-center">Choose type of trucks</div>
                   <div
                     onClick={() => setShow(!show)}
                     className="cursor-pointer">
                     {show ? <BsChevronUp /> : <BsChevronDown />}
                   </div>
                   {show && (
-                    <div className="absolute w-[90%] top-8 mx-auto pt-4 left-4 rounded-b-xl overflow-hidden ">
+                    <div className="absolute w-[90%] top-10 mx-auto pt-4 left-4 rounded-b-xl overflow-hidden ">
                       <motion.div
                         variants={animationConfiguration}
                         initial="initial"
@@ -60,17 +61,23 @@ const index = () => {
                         exit="exit"
                         className="flex w-full justify-center mx-auto  bg-[#ffffffab] items-center flex-col">
                         <div className="w-full bg-lightBrow text-darkBrown text-center cursor-pointer">
-                          EUR
+                          Standard
+                          trucks with Tarpaulin
+                          Trailers
                         </div>
                         <div className="w-full hover:bg-lightBrow text-darkBrown text-center cursor-pointer my-1">
-                          USD
+                          Frigo Trucks
                         </div>{" "}
                         <div className="w-full hover:bg-lightBrow text-darkBrown text-center cursor-pointer">
-                          GBP
+                          Solo Trucks
                         </div>
                         <div className="w-full hover:bg-lightBrow text-darkBrown text-center cursor-pointer">
-                          BGN
+                          Road Trains
                         </div>
+                        <div className="w-full hover:bg-lightBrow text-darkBrown text-center cursor-pointer">
+                          Vans up to 3.5 tons
+                        </div>
+
                       </motion.div>
                     </div>
                   )}
@@ -80,7 +87,7 @@ const index = () => {
           </div>
           <div className="flex sm:justify-between justify-center gap-3  md:mt-0  items-center w-[98%]  sm:w-[90%] xl:mt-5">
             <button
-              onClick={() => router.push("slide8")}
+              onClick={() => router.push("slide5")}
               className={`flex gap-1 h-[3rem] w-[7rem] text-[#B67E4A] text-[16px] 
                  font-semibold justify-center items-center bg-backBrown  rounded-[40px]`}>
               <div className="">
@@ -89,10 +96,9 @@ const index = () => {
               <div>Back</div>
             </button>
             <button
-              onClick={() => router.push("slide10")}
-              className={`flex gap-1 h-[3rem] w-[7rem] text-white text-[16px] ${
-                show ? "enabled" : ""
-              }  font-semibold justify-center items-center bg-nextBrown rounded-[40px]`}>
+              onClick={() => router.push("slide7")}
+              className={`flex gap-1 h-[3rem] w-[7rem] text-white text-[16px] ${show ? "enabled" : ""
+                }  font-semibold justify-center items-center bg-nextBrown rounded-[40px]`}>
               <div>Next</div>
               <div className="">
                 <MdOutlineNavigateNext size={30} />

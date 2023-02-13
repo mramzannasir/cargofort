@@ -55,7 +55,7 @@ export default function Home() {
                 < HiOutlineArrowRight />
               </div>
             </div>
-            <div data-aos="zoom-in" className="w-full rounded-[40px] cursor-pointer transition-all duration-300 hover:shadow-md hover:scale-105 outline-none border-none bg-white py-2 sm:py-3 4xl:py-3 flex items-center gap-3 justify-between px-5">
+            <div onClick={(() => router.replace('/carriage'))} data-aos="zoom-in" className="w-full rounded-[40px] cursor-pointer transition-all duration-300 hover:shadow-md hover:scale-105 outline-none border-none bg-white py-2 sm:py-3 4xl:py-3 flex items-center gap-3 justify-between px-5">
               <div>
                 <p className="text-darkBrown des"> Carriage Liabilities Carriage </p>
               </div>

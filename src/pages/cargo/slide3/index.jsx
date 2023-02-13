@@ -26,7 +26,7 @@ const index = () => {
           initial="initial"
           animate="animate"
           exit="exit"
-          transition={{ duration: 0.4 }}
+          transition={{ duration: 0.8 }}
           className=" card  contain relative flex-col justify-center items-center">
           <div className="w-full md:w-[70%] xl:w-[60%]">
             <h1 className=" text-darkBrown sub-title text-center">
@@ -53,7 +53,7 @@ const index = () => {
                   )}
                 </div>
                 <div>
-                  <p className="text-darkBrown des">General Cargo</p>
+                  <p className="text-darkBrown des">General <br className="md:hidden" /> Cargo</p>
                 </div>
               </div>
               <div className="w-full rounded-[40px] outline-none border-none bg-white py-2 sm:py-3 4xl:py-3 flex items-center gap-3 justify-start px-5">
@@ -72,7 +72,7 @@ const index = () => {
                   )}
                 </div>
                 <div>
-                  <p className="text-darkBrown des">Alcohol, Tobacco</p>
+                  <p className="text-darkBrown des">Alcohol, <br className="md:hidden" /> Tobacco</p>
                 </div>
               </div>
             </div>
@@ -94,7 +94,7 @@ const index = () => {
                 </div>
                 <div>
                   <p className="text-darkBrown des">
-                    Machines, Heavy Equipment
+                    Machines, <br className="md:hidden" /> Heavy Equipment
                   </p>
                 </div>
               </div>
@@ -115,7 +115,7 @@ const index = () => {
                 </div>
                 <div>
                   <p className="text-darkBrown des">
-                    Electronics (Computers, Phones)
+                    Electronics <br className="md:hidden" /> (Computers, Phones)
                   </p>
                 </div>
               </div>
@@ -124,7 +124,7 @@ const index = () => {
           <div className="flex sm:justify-between justify-center gap-3 mt-2 md:mt-0  items-center w-[98%]  sm:w-[90%] xl:mt-5">
             <button
               onClick={() => router.push("slide2")}
-              className={`flex gap-2 px-5 py-2 text-[#B67E4A] text-[16px] 
+              className={`flex gap-1 h-[3rem] w-[7rem] text-[#B67E4A] text-[16px] 
                  font-semibold justify-center items-center bg-backBrown  rounded-[40px]`}>
               <div className="">
                 <MdNavigateBefore size={30} />
@@ -134,7 +134,7 @@ const index = () => {
             <button
               disabled={!show}
               onClick={() => router.replace("slide4")}
-              className={`flex gap-2 px-5 py-2 text-white text-[16px] ${
+              className={`flex gap-1 h-[3rem] w-[7rem] text-white text-[16px] ${
                 show ? "enabled" : ""
               }  font-semibold justify-center items-center bg-nextBrown rounded-[40px]`}>
               <div>Next</div>
@@ -147,20 +147,20 @@ const index = () => {
           <div>
             <img
               src="/left-cloud.png"
-              className="absolute top-6 -left-11 z-[-1]"
+              className="absolute top-6 -left-11 md:h-auto md:w-auto h-[2rem]  md:top-[8rem] md:-left-[6rem]  z-[-1]"
               alt=""
               srcset=""
             />
             <img
               src="/right-cloud.png"
-              className="absolute top-6 -right-8 z-[-1]"
+              className="absolute top-6 md:-top-1 md:h-auto md:w-auto h-[2rem] -right-8 z-[-1] md:-right-[10rem]"
               alt=""
               srcset=""
             />
           </div>
           <div
             onClick={() => router.replace("slide4")}
-            className="absolute top-[49%] right-2 text-darkBrown cursor-pointer">
+            className="absolute top-[49%] right-2 text-darkBrown hidden md:block cursor-pointer">
             <BsChevronRight size={30} />
           </div>
         </motion.div>

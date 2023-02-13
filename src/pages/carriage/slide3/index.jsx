@@ -7,7 +7,6 @@ import { FiCheck } from "react-icons/fi";
 import { MdOutlineNavigateNext } from "react-icons/md";
 import { MdNavigateBefore } from "react-icons/md";
 import { BsChevronRight } from "react-icons/bs";
-import { BsChevronLeft } from "react-icons/bs";
 const animationConfiguration = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
@@ -16,25 +15,6 @@ const animationConfiguration = {
 const index = () => {
   const router = useRouter();
   const [show, setShow] = useState(false);
-  const [show1, setShow1] = useState(false);
-  const [show2, setShow2] = useState(false);
-  const [show3, setShow3] = useState(false);
-
-  const nextClick = () => {
-    if (show) {
-      router.replace("slide5");
-    }
-    if (show1) {
-      router.replace("slide5");
-    }
-    if (show2) {
-      router.replace("slide5");
-    }
-    if (show3) {
-      router.replace("slide5");
-    }
-  };
-
   return (
     <>
       <main className="wrapper">
@@ -48,34 +28,36 @@ const index = () => {
           exit="exit"
           transition={{ duration: 0.8 }}
           className=" card  contain relative flex-col justify-center items-center">
-          <div className="w-full md:w-[70%] xl:w-[70%]">
+          <div className="w-full md:w-[70%] xl:w-[60%]">
             <h1 className=" text-darkBrown sub-title text-center">
-              To measure your protection better, can you tell us what is the
-              exact name of your cargo and whether it is new or used?
+              Tell us a little bit <br className="hidden md:block" />
+              about
+              your transport company...
             </h1>
           </div>
-          <div className="my-[30px] sm:my-[35px] lg:my-[30px] w-[100%] flex justify-center items-center flex-col">
-            <div className="w-[95%] md:w-[60%] lg:w-[85%] flex-col gap-3 flex lg:flex-row  ">
-              <input
-                type="text"
-                className="rounded-[40px] px-4 text-[16px] md:text-[18px] text py-5 bg-white border-none outline-none  h-full w-full "
-                placeholder="Number of palletes..."
-              />
-              <input
-                type="text"
-                className="rounded-[40px] px-4 text-[16px] md:text-[18px] text py-5 bg-white border-none outline-none  h-full w-full "
-                placeholder="Packages..."
-              />
-              <input
-                type="text"
-                className="rounded-[40px] px-4 text-[16px] md:text-[18px] text py-5 bg-white border-none outline-none  h-full w-full "
-                placeholder="Parcells..."
-              />
+
+          <div className="my-[30px] sm:my-[35px] lg:my-[30px] w-[100%] flex flex-col justify-center items-center ">
+            <div className="w-[95%] md:w-[40%] lg:w-[30%] flex-col gap-3 flex   ">
+              <div className="w-full">
+                <input
+                  type="text"
+                  className="rounded-[40px]  placeholder:text-darkBrown placeholder:opacity-50 px-4 text-[16px] md:text-[18px] text py-5 bg-white border-none outline-none  h-full w-full "
+                  placeholder="Name"
+                />
+              </div>
+              <div className="w-full">
+                <input
+                  type="text"
+                  className="rounded-[40px]  placeholder:text-darkBrown placeholder:opacity-50 px-4 text-[16px] md:text-[18px] text py-5 bg-white border-none outline-none  h-full w-full "
+                  placeholder="UIC/ VAT..."
+                />
+              </div>
             </div>
+
           </div>
-          <div className="flex sm:justify-between justify-center gap-3  md:mt-0  items-center w-[98%]  sm:w-[90%] xl:mt-5">
+          <div className="flex sm:justify-between justify-center gap-3 mt-2 md:mt-0  items-center w-[98%]  sm:w-[90%] xl:mt-5">
             <button
-              onClick={() => router.push("slide5")}
+              onClick={() => router.push("slide2")}
               className={`flex gap-1 h-[3rem] w-[7rem] text-[#B67E4A] text-[16px] 
                  font-semibold justify-center items-center bg-backBrown  rounded-[40px]`}>
               <div className="">
@@ -84,16 +66,16 @@ const index = () => {
               <div>Back</div>
             </button>
             <button
-              onClick={() => router.push("slide8")}
-              className={`flex gap-1 h-[3rem] w-[7rem] text-white text-[16px] ${
-                show ? "enabled" : ""
-              }  font-semibold justify-center items-center bg-nextBrown rounded-[40px]`}>
+           
+              onClick={() => router.replace("slide4")}
+              className={`flex gap-1 h-[3rem] w-[7rem] text-white text-[16px]  font-semibold justify-center items-center bg-nextBrown rounded-[40px]`}>
               <div>Next</div>
               <div className="">
                 <MdOutlineNavigateNext size={30} />
               </div>
             </button>
           </div>
+          {/* position absolute  */}
           <div>
             <img
               src="/left-cloud.png"
@@ -107,6 +89,11 @@ const index = () => {
               alt=""
               srcset=""
             />
+          </div>
+          <div
+            onClick={() => router.replace("slide4")}
+            className="absolute top-[49%] right-2 text-darkBrown hidden md:block cursor-pointer">
+            <BsChevronRight size={30} />
           </div>
         </motion.div>
       </main>

@@ -33,7 +33,7 @@ const index = () => {
           initial="initial"
           animate="animate"
           exit="exit"
-          transition={{ duration: 0.4 }}
+          transition={{ duration: 0.8 }}
           className=" card  contain relative flex-col justify-center items-center">
           <div className="w-full md:w-[70%] xl:w-[60%]">
             <h1 className=" text-darkBrown sub-title text-center">
@@ -56,7 +56,7 @@ const index = () => {
           <div className="flex sm:justify-between justify-center gap-3 mt-2 md:mt-0  items-center w-[98%]  sm:w-[90%] xl:mt-5">
             <button
               onClick={() => router.push("slide4")}
-              className={`flex gap-2 px-5 py-2 text-[#B67E4A] text-[16px] 
+              className={`flex gap-1 h-[3rem] w-[7rem] text-[#B67E4A] text-[16px] 
                  font-semibold justify-center items-center bg-backBrown  rounded-[40px]`}>
               <div className="">
                 <MdNavigateBefore size={30} />
@@ -66,7 +66,7 @@ const index = () => {
             <button
               disabled={!go}
               onClick={() => router.push("slide6")}
-              className={`flex gap-2 px-5 py-2 text-white text-[16px] font-semibold justify-center items-center bg-nextBrown rounded-[40px]`}>
+              className={`flex gap-1 h-[3rem] w-[7rem] text-white text-[16px] font-semibold justify-center items-center bg-nextBrown rounded-[40px]`}>
               <div>Next</div>
               <div className="">
                 <MdOutlineNavigateNext size={30} />
@@ -76,13 +76,13 @@ const index = () => {
           <div>
             <img
               src="/left-cloud.png"
-              className="absolute top-6 -left-11 z-[-1]"
+              className="absolute top-6 -left-11 md:h-auto md:w-auto h-[2rem]  md:top-[8rem] md:-left-[6rem]  z-[-1]"
               alt=""
               srcset=""
             />
             <img
               src="/right-cloud.png"
-              className="absolute top-6 -right-8 z-[-1]"
+              className="absolute top-6 md:-top-1 md:h-auto md:w-auto h-[2rem] -right-8 z-[-1] md:-right-[10rem]"
               alt=""
               srcset=""
             />

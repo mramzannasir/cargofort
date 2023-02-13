@@ -16,24 +16,9 @@ const animationConfiguration = {
 const index = () => {
   const router = useRouter();
   const [show, setShow] = useState(false);
-  const [show1, setShow1] = useState(false);
-  const [show2, setShow2] = useState(false);
-  const [show3, setShow3] = useState(false);
 
-const nextClick = () =>{
-  if (show) {
-    router.replace('slide5')
-  }
-  if (show1) {
-    router.replace('slide5')
-  }
-  if (show2) {
-    router.replace('slide5')
-  }
-  if (show3) {
-    router.replace('slide5')
-  }
-}
+
+
 
   return (
     <>
@@ -50,42 +35,40 @@ const nextClick = () =>{
           className=" card  contain relative flex-col justify-center items-center">
           <div className="w-full md:w-[70%] xl:w-[60%]">
             <h1 className=" text-darkBrown sub-title text-center">
-              Do you recognize the type of your cargo in any of these
-              categories?
+              What types of Cargo do you transport?
             </h1>
           </div>
 
-          <div className="my-[30px] sm:my-[35px] lg:my-[30px] w-[100%] flex justify-center items-center flex-col">
-            <div className="w-[95%] md:w-[60%] lg:w-[85%] flex-col gap-3 flex lg:flex-row  ">
+          <div className="my-[30px] sm:my-[35px] md:my-[10px] lg:my-[30px] w-[100%] flex justify-center items-center flex-col">
+            <div className="w-[95%] md:w-[70%] lg:w-[85%] flex-col gap-3 flex lg:flex-row  ">
               <div className="w-full rounded-[40px]  outline-none border-none bg-white py-2 sm:py-3 4xl:py-3  flex items-center gap-3 justify-start px-5">
                 <div
-                  onClick={() => setShow(!show)}
-                  className={`relative bg-lightBrow cursor-pointer hover:bg-selectBrown ${
-                    show ? "bg-selectBrown" : ""
-                  } h-[29px] w-[29px] sm:h-[30px] sm:w-[30px] rounded-full`}>
+                  onClick={() => setShow(1)}
+                  className={`relative bg-lightBrow cursor-pointer hover:bg-selectBrown ${show === 1 ? "bg-selectBrown" : ""
+                    } h-[29px] w-[29px] sm:h-[30px] sm:w-[30px] rounded-full`}>
                   <input
                     type="checkbox"
                     className="appearance-none  cursor-pointer    rounded-full"></input>
-                  {show && (
+                  {show === 1 && (
                     <div className="absolute top-1 sm:top-[3px] left-[1px] sm:left-[2px] text-white">
                       <FiCheck size={27} />
                     </div>
                   )}
                 </div>
                 <div>
-                  <p className="text-darkBrown des">Fragile Goods</p>
+                  <p className="text-darkBrown des">General
+                    <br className="hidden lg:block" />  Cargo</p>
                 </div>
               </div>
               <div className="w-full rounded-[40px] outline-none border-none bg-white py-2 sm:py-3 4xl:py-3 flex items-center gap-3 justify-start px-5">
                 <div
-                  onClick={() => setShow1(!show1)}
-                  className={`relative bg-lightBrow cursor-pointer hover:bg-selectBrown ${
-                    show1 ? "bg-selectBrown" : ""
-                  } h-[29px] w-[29px] sm:h-[30px] sm:w-[30px] rounded-full`}>
+                  onClick={() => setShow(2)}
+                  className={`relative bg-lightBrow cursor-pointer hover:bg-selectBrown ${show === 2 ? "bg-selectBrown" : ""
+                    } h-[29px] w-[29px] sm:h-[30px] sm:w-[30px] rounded-full`}>
                   <input
                     type="checkbox"
                     className="appearance-none  cursor-pointer    rounded-full"></input>
-                  {show1 && (
+                  {show === 2 && (
                     <div className="absolute top-1 sm:top-[3px] left-[1px] sm:left-[2px] text-white">
                       <FiCheck size={27} />
                     </div>
@@ -93,48 +76,92 @@ const nextClick = () =>{
                 </div>
                 <div>
                   <p className="text-darkBrown des">
-                    Cosmetics, Pharmaceuticals
+                    Fragile
+                    <br className="hidden lg:block" />
+                    Goods
+                  </p>
+                </div>
+              </div>
+              <div className="w-full rounded-[40px] outline-none border-none bg-white py-2 sm:py-3 4xl:py-3 flex items-center gap-3 justify-start px-5">
+                <div
+                  onClick={() => setShow(3)}
+                  className={`relative bg-lightBrow cursor-pointer hover:bg-selectBrown ${show === 3 ? "bg-selectBrown" : ""
+                    } h-[29px] w-[29px] sm:h-[30px] sm:w-[30px] rounded-full`}>
+                  <input
+                    type="checkbox"
+                    className="appearance-none  cursor-pointer    rounded-full"></input>
+                  {show === 3 && (
+                    <div className="absolute top-1 sm:top-[3px] left-[1px] sm:left-[2px] text-white">
+                      <FiCheck size={27} />
+                    </div>
+                  )}
+                </div>
+                <div>
+                  <p className="text-darkBrown des">
+                    Dangerous
+                    <br className="hidden lg:block" />
+                    Goods (ADR)
                   </p>
                 </div>
               </div>
             </div>
-            <div className="w-[95%] md:w-[60%] lg:w-[85%] flex-col mt-3 lg:flex-row gap-3 flex  ">
+            <div className="w-[95%] md:w-[70%] lg:w-[85%] flex-col mt-3 lg:flex-row gap-3 flex  ">
               <div className="w-full rounded-[40px] outline-none border-none bg-white py-2 sm:py-3 4xl:py-3 flex items-center gap-3 justify-start px-5">
                 <div
-                  onClick={() => setShow2(!show2)}
-                  className={`relative bg-lightBrow cursor-pointer hover:bg-selectBrown ${
-                    show2 ? "bg-selectBrown" : ""
-                  } h-[29px] w-[29px] sm:h-[30px] sm:w-[30px] rounded-full`}>
+                  onClick={() => setShow(4)}
+                  className={`relative bg-lightBrow cursor-pointer hover:bg-selectBrown ${show === 4 ? "bg-selectBrown" : ""
+                    } h-[29px] w-[29px] sm:h-[30px] sm:w-[30px] rounded-full`}>
                   <input
                     type="checkbox"
                     className="appearance-none  cursor-pointer    rounded-full"></input>
-                  {show2 && (
+                  {show === 4 && (
                     <div className="absolute top-1 sm:top-[3px] left-[1px] sm:left-[2px] text-white">
                       <FiCheck size={27} />
                     </div>
                   )}
                 </div>
                 <div>
-                  <p className="text-darkBrown des">Food Products</p>
+                  <p className="text-darkBrown des">Goods under <br className="hidden lg:block" />
+                    Temperature
+                    Control</p>
                 </div>
               </div>
               <div className="w-full rounded-[40px] outline-none border-none bg-white py-2 sm:py-3 4xl:py-3 flex items-center gap-3 justify-start px-5">
                 <div
-                  onClick={() => setShow3(!show3)}
-                  className={`relative bg-lightBrow cursor-pointer hover:bg-selectBrown ${
-                    show3 ? "bg-selectBrown" : ""
-                  } h-[29px] w-[29px] sm:h-[30px] sm:w-[30px] rounded-full`}>
+                  onClick={() => setShow(5)}
+                  className={`relative bg-lightBrow cursor-pointer hover:bg-selectBrown ${show === 5 ? "bg-selectBrown" : ""
+                    } h-[29px] w-[29px] sm:h-[30px] sm:w-[30px] rounded-full`}>
                   <input
                     type="checkbox"
                     className="appearance-none  cursor-pointer    rounded-full"></input>
-                  {show3 && (
+                  {show === 5 && (
                     <div className="absolute top-1 sm:top-[3px] left-[1px] sm:left-[2px] text-white">
                       <FiCheck size={27} />
                     </div>
                   )}
                 </div>
                 <div>
-                  <p className="text-darkBrown des">Vehicles</p>
+                  <p className="text-darkBrown des">High <br className="hidden lg:block" /> Value
+                    Goods</p>
+                </div>
+              </div>
+              <div className="w-full rounded-[40px] outline-none border-none bg-white py-2 sm:py-3 4xl:py-3 flex items-center gap-3 justify-start px-5">
+                <div
+                  onClick={() => setShow(6)}
+                  className={`relative bg-lightBrow cursor-pointer hover:bg-selectBrown ${show === 6 ? "bg-selectBrown" : ""
+                    } h-[29px] w-[29px] sm:h-[30px] sm:w-[30px] rounded-full`}>
+                  <input
+                    type="checkbox"
+                    className="appearance-none  cursor-pointer    rounded-full"></input>
+                  {show === 6 && (
+                    <div className="absolute top-1 sm:top-[3px] left-[1px] sm:left-[2px] text-white">
+                      <FiCheck size={27} />
+                    </div>
+                  )}
+                </div>
+                <div>
+                  <p className="text-darkBrown des">Others <br />
+                  </p>
                 </div>
               </div>
             </div>
@@ -150,18 +177,17 @@ const nextClick = () =>{
               <div>Back</div>
             </button>
             <button
-             
-              onClick={nextClick}
-              className={`flex  gap-1 h-[3rem] w-[7rem] text-white text-[16px] ${
-                show ? "enabled" : ""
-              }  font-semibold justify-center items-center bg-nextBrown rounded-[40px]`}>
+
+              onClick={(() => router.replace("slide8"))}
+              className={`flex  gap-1 h-[3rem] w-[7rem] text-white text-[16px] ${show ? "enabled" : ""
+                }  font-semibold justify-center items-center bg-nextBrown rounded-[40px]`}>
               <div>Next</div>
               <div className="">
                 <MdOutlineNavigateNext size={30} />
               </div>
             </button>
           </div>
-       
+
           <div>
             <img
               src="/left-cloud.png"
@@ -175,17 +201,6 @@ const nextClick = () =>{
               alt=""
               srcset=""
             />
-          </div>
-          <div
-            onClick={() => router.replace("slide4")}
-            className="absolute top-[49%] hidden md:block right-2 text-darkBrown cursor-pointer">
-            <BsChevronRight size={30} />
-          </div>
-
-          <div
-            onClick={() => router.replace("slide3")}
-            className="absolute top-[49%] hidden md:block left-2 text-darkBrown cursor-pointer">
-            <BsChevronLeft size={30} />
           </div>
         </motion.div>
       </main>

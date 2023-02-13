@@ -22,18 +22,18 @@ const index = () => {
 
   const nextClick = () => {
     if (show) {
-      router.replace("slide5");
+      router.replace('slide5')
     }
     if (show1) {
-      router.replace("slide5");
+      router.replace('slide5')
     }
     if (show2) {
-      router.replace("slide5");
+      router.replace('slide5')
     }
     if (show3) {
-      router.replace("slide5");
+      router.replace('slide5')
     }
-  };
+  }
 
   return (
     <>
@@ -46,67 +46,62 @@ const index = () => {
           initial="initial"
           animate="animate"
           exit="exit"
-          transition={{ duration: 0.8}}
+          transition={{ duration: 0.8 }}
           className=" card  contain relative flex-col justify-center items-center">
-          <div className="w-full md:w-[70%] xl:w-[70%]">
+          <div className="w-full md:w-[70%] xl:w-[60%]">
             <h1 className=" text-darkBrown sub-title text-center">
-              To measure your protection better, can you tell us what is the
-              exact name of your cargo and whether it is new or used?
+              Which parts of logistics
+              do you cover?
             </h1>
           </div>
+
           <div className="my-[30px] sm:my-[35px] lg:my-[30px] w-[100%] flex justify-center items-center flex-col">
-            <div className="w-[95%] md:w-[60%] lg:w-[85%] flex-col gap-3 flex lg:flex-row  ">
-              <input
-                type="text"
-                className="rounded-[40px] px-4 text-[16px] md:text-[18px] text py-5 bg-white border-none outline-none  h-full w-full "
-                placeholder="Name of Cargo..."
-              />
-            </div>
-            <div className="w-[95%] md:w-[60%] lg:w-[85%] flex-col mt-3 lg:flex-row gap-3 flex  ">
-              <div className="w-full rounded-[40px] outline-none border-none bg-white py-2 sm:py-3 4xl:py-3 flex items-center gap-3 justify-start px-5">
+            <div className="w-[95%] md:w-[60%] lg:w-[85%] flex-col gap-3 flex  ">
+              <div className="w-full rounded-[40px]  outline-none border-none bg-white py-2 sm:py-3 4xl:py-3  flex items-center gap-3 justify-start px-5">
                 <div
-                  onClick={() => setShow2(!show2)}
-                  className={`relative bg-lightBrow cursor-pointer hover:bg-selectBrown ${
-                    show2 ? "bg-selectBrown" : ""
-                  } h-[29px] w-[29px] sm:h-[30px] sm:w-[30px] rounded-full`}>
+                  onClick={() => setShow(!show)}
+                  className={`relative bg-lightBrow cursor-pointer hover:bg-selectBrown ${show ? "bg-selectBrown" : ""
+                    } h-[29px] w-[29px] sm:h-[30px] sm:w-[30px] rounded-full`}>
                   <input
                     type="checkbox"
                     className="appearance-none  cursor-pointer    rounded-full"></input>
-                  {show2 && (
+                  {show && (
                     <div className="absolute top-1 sm:top-[3px] left-[1px] sm:left-[2px] text-white">
                       <FiCheck size={27} />
                     </div>
                   )}
                 </div>
                 <div>
-                  <p className="text-darkBrown des">New</p>
+                  <p className="text-darkBrown des">Carriage</p>
                 </div>
               </div>
               <div className="w-full rounded-[40px] outline-none border-none bg-white py-2 sm:py-3 4xl:py-3 flex items-center gap-3 justify-start px-5">
                 <div
-                  onClick={() => setShow3(!show3)}
-                  className={`relative bg-lightBrow cursor-pointer hover:bg-selectBrown ${
-                    show3 ? "bg-selectBrown" : ""
-                  } h-[29px] w-[29px] sm:h-[30px] sm:w-[30px] rounded-full`}>
+                  onClick={() => setShow1(!show1)}
+                  className={`relative bg-lightBrow cursor-pointer hover:bg-selectBrown ${show1 ? "bg-selectBrown" : ""
+                    } h-[29px] w-[29px] sm:h-[30px] sm:w-[30px] rounded-full`}>
                   <input
                     type="checkbox"
                     className="appearance-none  cursor-pointer    rounded-full"></input>
-                  {show3 && (
+                  {show1 && (
                     <div className="absolute top-1 sm:top-[3px] left-[1px] sm:left-[2px] text-white">
                       <FiCheck size={27} />
                     </div>
                   )}
                 </div>
                 <div>
-                  <p className="text-darkBrown des">Used</p>
+                  <p className="text-darkBrown des">
+                  Forwarding
+                  </p>
                 </div>
               </div>
             </div>
+
           </div>
           <div className="flex sm:justify-between justify-center gap-3 mt-2 md:mt-0  items-center w-[98%]  sm:w-[90%] xl:mt-5">
             <button
-              onClick={() => router.push("slide5")}
-              className={`flex gap-1 h-[3rem] w-[7rem] text-[#B67E4A] text-[16px] 
+              onClick={() => router.push("slide2")}
+              className={`flex  gap-1 h-[3rem] w-[7rem] text-[#B67E4A] text-[16px] 
                  font-semibold justify-center items-center bg-backBrown  rounded-[40px]`}>
               <div className="">
                 <MdNavigateBefore size={30} />
@@ -114,10 +109,9 @@ const index = () => {
               <div>Back</div>
             </button>
             <button
-              onClick={() => router.push("slide7")}
-              className={`flex gap-1 h-[3rem] w-[7rem] text-white text-[16px] ${
-                show ? "enabled" : ""
-              }  font-semibold justify-center items-center bg-nextBrown rounded-[40px]`}>
+              onClick={nextClick}
+              className={`flex  gap-1 h-[3rem] w-[7rem] text-white text-[16px] ${show ? "enabled" : ""
+                }  font-semibold justify-center items-center bg-nextBrown rounded-[40px]`}>
               <div>Next</div>
               <div className="">
                 <MdOutlineNavigateNext size={30} />
@@ -138,6 +132,17 @@ const index = () => {
               alt=""
               srcset=""
             />
+          </div>
+          <div
+            onClick={() => router.replace("slide5")}
+            className="absolute top-[49%] hidden md:block right-2 text-darkBrown cursor-pointer">
+            <BsChevronRight size={30} />
+          </div>
+
+          <div
+            onClick={() => router.replace("slide3")}
+            className="absolute top-[49%] hidden md:block left-2 text-darkBrown cursor-pointer">
+            <BsChevronLeft size={30} />
           </div>
         </motion.div>
       </main>
