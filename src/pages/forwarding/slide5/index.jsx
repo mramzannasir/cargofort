@@ -16,7 +16,6 @@ const animationConfiguration = {
 const index = () => {
   const router = useRouter();
   const [show, setShow] = useState(false);
-
   return (
     <>
       <main className="wrapper">
@@ -32,11 +31,12 @@ const index = () => {
           className=" card  contain relative flex-col justify-center items-center">
           <div className="w-full md:w-[70%] xl:w-[70%]">
             <h1 className=" text-darkBrown sub-title text-center">
-              What Regions do you cover?
+              Nice, what types of
+              forwarding services do you offer?
             </h1>
           </div>
-          <div className="my-[15px] xl:my-[30px] 2xl:my-[45px] w-full flex justify-between items-center flex-col">
-            <div className="w-[95%] md:w-[60%] lg:w-[85%] flex-col gap-3 flex lg:flex-row  ">
+          <div className="my-[15px] lg:my-[30px] xl:my-[60px] w-full flex justify-center items-center flex-col">
+            <div className="w-[95%] md:w-[60%] lg:w-[75%] flex-col gap-3 flex lg:flex-row  ">
               <div className="w-full rounded-[40px]  outline-none border-none bg-white py-2 sm:py-3 4xl:py-3  flex items-center gap-3 justify-start px-5">
                 <div
                   onClick={() => setShow(1)}
@@ -52,7 +52,7 @@ const index = () => {
                   )}
                 </div>
                 <div>
-                  <p className="text-darkBrown des">Rest of World</p>
+                  <p className="text-darkBrown des">Arrange Transports</p>
                 </div>
               </div>
               <div className="w-full rounded-[40px]  outline-none border-none bg-white py-2 sm:py-3 4xl:py-3  flex items-center gap-3 justify-start px-5">
@@ -70,7 +70,7 @@ const index = () => {
                   )}
                 </div>
                 <div>
-                  <p className="text-darkBrown des">Worldwide</p>
+                  <p className="text-darkBrown des">Warehousing</p>
                 </div>
               </div>
               <div className="w-full rounded-[40px] outline-none border-none bg-white py-2 sm:py-3 4xl:py-3  flex items-center gap-3 justify-start px-5">
@@ -88,51 +88,14 @@ const index = () => {
                   )}
                 </div>
                 <div>
-                  <p className="text-darkBrown des">Asia</p>
-                </div>
-              </div>
-            </div>
-            <div className="w-full flex justify-center items-center flex-col mt-3">
-              <div className="w-[95%] md:w-[60%] lg:w-[85%] flex-col items-stretch justify-center gap-3 flex lg:flex-row">
-                <div className="w-full rounded-[40px] outline-none border-none bg-white py-2 sm:py-3 4xl:py-3  flex items-center gap-2 justify-start px-5">
-                  <div
-                    onClick={() => setShow(4)}
-                    className={`relative  bg-lightBrow cursor-pointer hover:bg-selectBrown ${show === 4 ? "bg-selectBrown" : ""
-                      } h-[29px] w-[29px] sm:h-[30px] sm:w-[30px] rounded-full`}>
-                    <input
-                      type="checkbox"
-                      className="appearance-none  cursor-pointer    rounded-full"></input>
-                    {show === 4 && (
-                      <div className="absolute top-1 sm:top-[3px] left-[1px] sm:left-[2px] text-white">
-                        <FiCheck size={27} />
-                      </div>
-                    )}
-                  </div>
-                  <div>
-                    <p className="text-darkBrown des">European Union
-                      (without India)</p>
-                  </div>
-                </div>
-                <div className="w-full flex-col flex relative ">
-                  <div className="w-full flex justify-between items-center bg-white px-4 rounded-[40px] py-3 ">
-                    <input
-                      className="sub text-darkBrown outline-none placeholder:text-darkBrown placeholder:opacity-50 border-none w-full"
-                      placeholder=" Input other countries here..."></input>
-                    <div>
-                      <img src="/info.png" alt="" />
-                    </div>
-                  </div>
-                  <p className="text-xs sm:text-sm  absolute text-darkBrown px-4 top-[3.2rem]">
-                    Enter the name of your company if you wish to earn bonuses,
-                    rewards and special prices
-                  </p>
+                  <p className="text-darkBrown des">Crossdocking</p>
                 </div>
               </div>
             </div>
           </div>
-          <div className="flex sm:justify-between justify-center gap-3 mt-[6rem]  md:mt-[4rem]  items-center w-[98%]  sm:w-[90%] ">
+          <div className="flex sm:justify-between justify-center gap-3  md:mt-0  items-center w-[98%]  sm:w-[90%] xl:mt-5">
             <button
-              onClick={() => router.push("slide8")}
+              onClick={() => router.push("slide4")}
               className={`flex gap-1 h-[3rem] w-[7rem] text-[#B67E4A] text-[16px] 
                  font-semibold justify-center items-center bg-backBrown  rounded-[40px]`}>
               <div className="">
@@ -141,7 +104,7 @@ const index = () => {
               <div>Back</div>
             </button>
             <button
-              onClick={() => router.push("slide10")}
+              onClick={() => router.push("slide6")}
               className={`flex gap-1 h-[3rem] w-[7rem] text-white text-[16px] ${show ? "enabled" : ""
                 }  font-semibold justify-center items-center bg-nextBrown rounded-[40px]`}>
               <div>Next</div>

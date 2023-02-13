@@ -132,7 +132,7 @@ const index = () => {
           </div>
           <div className="flex sm:justify-between justify-center gap-3 mt-[6rem]  md:mt-[4rem]  items-center w-[98%]  sm:w-[90%] ">
             <button
-              onClick={() => router.push("slide8")}
+              onClick={() => router.push("slide9")}
               className={`flex gap-1 h-[3rem] w-[7rem] text-[#B67E4A] text-[16px] 
                  font-semibold justify-center items-center bg-backBrown  rounded-[40px]`}>
               <div className="">
@@ -141,7 +141,7 @@ const index = () => {
               <div>Back</div>
             </button>
             <button
-              onClick={() => router.push("slide10")}
+              onClick={() => router.push("slide11")}
               className={`flex gap-1 h-[3rem] w-[7rem] text-white text-[16px] ${show ? "enabled" : ""
                 }  font-semibold justify-center items-center bg-nextBrown rounded-[40px]`}>
               <div>Next</div>

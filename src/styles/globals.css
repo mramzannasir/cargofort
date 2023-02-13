@@ -2,7 +2,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 .wrapper{
     @apply overflow-hidden flex flex-col h-screen w-full justify-center items-center bg-[url(/background.png)] bg-cover md:bg-[length:100%_100%] bg-center bg-no-repeat;
 }

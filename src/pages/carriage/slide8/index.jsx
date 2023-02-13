@@ -2,12 +2,10 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState } from "react";
 import { useRouter } from "next/router";
-import { motion } from "framer-motion";
-import { FiCheck } from "react-icons/fi";
 import { MdOutlineNavigateNext } from "react-icons/md";
 import { MdNavigateBefore } from "react-icons/md";
-import { BsChevronRight } from "react-icons/bs";
-import { BsChevronLeft } from "react-icons/bs";
+
+import { motion } from "framer-motion";
 const animationConfiguration = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
@@ -30,94 +28,17 @@ const index = () => {
           exit="exit"
           transition={{ duration: 0.8 }}
           className=" card  contain relative flex-col justify-center items-center">
-          <div className="w-full md:w-[70%] xl:w-[70%]">
-            <h1 className=" text-darkBrown sub-title text-center">
-              WOW, How are you shipping that?
-            </h1>
-          </div>
-          <div className="my-[15px] w-full flex justify-center items-center flex-col">
-            <div className="w-[95%] md:w-[60%] lg:w-[85%] flex-col gap-3 flex lg:flex-row  ">
-              <div className="w-full rounded-[40px]  outline-none border-none bg-white py-2 sm:py-3 4xl:py-3  flex items-center gap-3 justify-start px-5">
-                <div
-                  onClick={() => setShow(1)}
-                  className={`relative bg-lightBrow cursor-pointer hover:bg-selectBrown ${
-                    show === 1 ? "bg-selectBrown" : ""
-                  } h-[29px] w-[29px] sm:h-[30px] sm:w-[30px] rounded-full`}>
-                  <input
-                    type="checkbox"
-                    className="appearance-none  cursor-pointer rounded-full"></input>
-                  {show === 1 && (
-                    <div className="absolute top-1 sm:top-[3px] left-[1px] sm:left-[2px] text-white">
-                      <FiCheck size={27} />
-                    </div>
-                  )}
-                </div>
-                <div>
-                  <p className="text-darkBrown des">Sea</p>
-                </div>
+          <div className="my-[30px] sm:my-[35px] lg:my-[30px] w-[100%] flex justify-center items-center flex-col">
+            <div className="w-[95%] md:w-[90%] flex-col flex lg:flex-row justify-center  items-center">
+              <div className="w-full">
+                <h1 className="sub-title text-darkBrown text-center lg:text-left">Can you tell us what is the split between those?</h1>
               </div>
-              <div className="w-full rounded-[40px]  outline-none border-none bg-white py-2 sm:py-3 4xl:py-3  flex items-center gap-3 justify-start px-5">
-                <div
-                  onClick={() => setShow(2)}
-                  className={`relative bg-lightBrow cursor-pointer hover:bg-selectBrown ${
-                    show === 2 ? "bg-selectBrown" : ""
-                  } h-[29px] w-[29px] sm:h-[30px] sm:w-[30px] rounded-full`}>
-                  <input
-                    type="checkbox"
-                    className="appearance-none  cursor-pointer    rounded-full"></input>
-                  {show === 2 && (
-                    <div className="absolute top-1 sm:top-[3px] left-[1px] sm:left-[2px] text-white">
-                      <FiCheck size={27} />
-                    </div>
-                  )}
-                </div>
-                <div>
-                  <p className="text-darkBrown des">Road</p>
-                </div>
-              </div>
-              <div className="w-full rounded-[40px] outline-none border-none bg-white py-2 sm:py-3 4xl:py-3  flex items-center gap-3 justify-start px-5">
-                <div
-                  onClick={() => setShow(3)}
-                  className={`relative  bg-lightBrow cursor-pointer hover:bg-selectBrown ${
-                    show === 3 ? "bg-selectBrown" : ""
-                  } h-[29px] w-[29px] sm:h-[30px] sm:w-[30px] rounded-full`}>
-                  <input
-                    type="checkbox"
-                    className="appearance-none  cursor-pointer    rounded-full"></input>
-                  {show === 3 && (
-                    <div className="absolute top-1 sm:top-[3px] left-[1px] sm:left-[2px] text-white">
-                      <FiCheck size={27} />
-                    </div>
-                  )}
-                </div>
-                <div>
-                  <p className="text-darkBrown des">Air</p>
-                </div>
+              <div className="w-full ">
+                <img src="/circle.png" className=" mx-auto" alt="" />
               </div>
             </div>
           </div>
-
-          <div className="w-full md:w-[70%] xl:w-[70%]">
-            <h1 className=" text-darkBrown sub-title text-center">
-              Where is your cargo traveling to?
-            </h1>
-          </div>
-
-          <div className="my-[15px] w-full flex justify-center items-center flex-col">
-            <div className="w-[95%] md:w-[60%] lg:w-[85%] flex-col gap-3 flex lg:flex-row  ">
-              <input
-                type="text"
-                className="rounded-[40px] px-4 text-[16px] md:text-[18px] text py-4 bg-white border-none outline-none  h-full w-full "
-                placeholder="From..."
-              />
-              <input
-                type="text"
-                className="rounded-[40px] px-4 text-[16px] md:text-[18px] text py-4 bg-white border-none outline-none  h-full w-full "
-                placeholder="To..."
-              />
-            </div>
-          </div>
-          <div className="flex sm:justify-between justify-center gap-3  md:mt-0  items-center w-[98%]  sm:w-[90%] xl:mt-5">
+          <div className="flex sm:justify-between justify-center gap-3 items-center w-[95%] md:w-[90%] lg:w-[80%] ">
             <button
               onClick={() => router.push("slide7")}
               className={`flex gap-1 h-[3rem] w-[7rem] text-[#B67E4A] text-[16px] 
@@ -129,27 +50,27 @@ const index = () => {
             </button>
             <button
               onClick={() => router.push("slide9")}
-              className={`flex gap-1 h-[3rem] w-[7rem] text-white text-[16px] ${
-                show ? "enabled" : ""
-              }  font-semibold justify-center items-center bg-nextBrown rounded-[40px]`}>
+              className={`flex gap-1 h-[3rem] w-[7rem] text-white text-[16px] ${show ? "enabled" : ""
+                }  font-semibold justify-center items-center bg-nextBrown rounded-[40px]`}>
               <div>Next</div>
               <div className="">
                 <MdOutlineNavigateNext size={30} />
               </div>
             </button>
           </div>
+
+
           <div>
             <img
               src="/left-cloud.png"
               className="absolute top-6 -left-11 md:h-auto md:w-auto h-[2rem]  md:top-[8rem] md:-left-[6rem]  z-[-1]"
               alt=""
-              srcset=""
+
             />
             <img
               src="/right-cloud.png"
               className="absolute top-6 md:-top-1 md:h-auto md:w-auto h-[2rem] -right-8 z-[-1] md:-right-[10rem]"
               alt=""
-              srcset=""
             />
           </div>
         </motion.div>

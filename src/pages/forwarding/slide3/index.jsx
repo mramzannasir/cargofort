@@ -6,9 +6,7 @@ import { motion } from "framer-motion";
 import { FiCheck } from "react-icons/fi";
 import { MdOutlineNavigateNext } from "react-icons/md";
 import { MdNavigateBefore } from "react-icons/md";
-import { BsChevronUp } from "react-icons/bs";
-
-import { BsChevronDown } from "react-icons/bs";
+import { BsChevronRight } from "react-icons/bs";
 const animationConfiguration = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
@@ -29,43 +27,34 @@ const index = () => {
           animate="animate"
           exit="exit"
           transition={{ duration: 0.8 }}
-          className=" card  contain  flex-col justify-center items-center">
-          <div className="w-full md:w-[70%] xl:w-[80%]">
+          className=" card  contain relative flex-col justify-center items-center">
+          <div className="w-full md:w-[70%] xl:w-[60%]">
             <h1 className=" text-darkBrown sub-title text-center">
-              Which email shall we use for that offer?
+              Tell us a little bit <br className="hidden md:block" /> about your transport company...
             </h1>
           </div>
-          <div className="my-[30px] sm:my-[35px] lg:my-[30px] w-[100%] flex justify-center items-center flex-col">
-            <div className="w-[95%] md:w-[60%] lg:w-[45%] flex-col flex ">
-              <input
-                type="email"
-                className="rounded-[40px] px-4 text-[16px] md:text-[18px] text-darkBrown border-darkBrown border-[1.5px]  bg-white outline-none py-3 w-full"
-                placeholder="E-mail"
-              />
-            </div>
-            <div className="w-[95%] md:w-[60%] lg:w-[45%] flex-col flex mt-4 md:mt-6 relative ">
-              <div className="w-full flex justify-between items-center bg-white px-4 rounded-[40px] py-3 ">
+          <div className="my-[30px] sm:my-[35px] lg:my-[30px] w-[100%] flex flex-col justify-center items-center ">
+            <div className="w-[95%] md:w-[40%] lg:w-[30%] flex-col gap-3 flex   ">
+              <div className="w-full">
                 <input
-                  className="sub text-darkBrown outline-none border-none w-full"
-                  placeholder="Name of Company"></input>
-                <div>
-                  <img src="/info.png" alt="" />
-                </div>
+                  type="text"
+                  className="rounded-[40px]  placeholder:text-darkBrown placeholder:opacity-50 px-4 text-[16px] md:text-[18px] text py-5 bg-white border-none outline-none  h-full w-full "
+                  placeholder="Name"
+                />
               </div>
-              <p className="sub  text-darkBrown px-4 xl:hidden">
-                Enter the name of your company if you wish to earn bonuses,
-                rewards and special prices
-              </p>
-              <p className="sub w-[280px] hidden xl:block absolute text-darkBrown px-4 -top-[1rem] -right-[17rem]">
-                Enter the name of your company if you wish to earn bonuses,
-                rewards and special prices
-              </p>
+              <div className="w-full">
+                <input
+                  type="text"
+                  className="rounded-[40px]  placeholder:text-darkBrown placeholder:opacity-50 px-4 text-[16px] md:text-[18px] text py-5 bg-white border-none outline-none  h-full w-full "
+                  placeholder="UIC/ VAT..."
+                />
+              </div>
             </div>
-          </div>
 
-          <div className="flex sm:justify-between justify-center gap-3  md:mt-0  items-center w-[98%]  sm:w-[90%] xl:mt-5">
+          </div>
+          <div className="flex sm:justify-between justify-center gap-3 mt-2 md:mt-0  items-center w-[98%]  sm:w-[90%] xl:mt-5">
             <button
-              onClick={() => router.push("slide10")}
+              onClick={() => router.push("slide2")}
               className={`flex gap-1 h-[3rem] w-[7rem] text-[#B67E4A] text-[16px] 
                  font-semibold justify-center items-center bg-backBrown  rounded-[40px]`}>
               <div className="">
@@ -74,15 +63,15 @@ const index = () => {
               <div>Back</div>
             </button>
             <button
-              onClick={() => router.push("slide12")}
-              className={`flex gap-1 h-[3rem] w-[7rem] text-white text-[16px] ${show ? "enabled" : ""
-                }  font-semibold justify-center items-center bg-nextBrown rounded-[40px]`}>
+              onClick={() => router.replace("slide4")}
+              className={`flex gap-1 h-[3rem] w-[7rem] text-white text-[16px]  font-semibold justify-center items-center bg-nextBrown rounded-[40px]`}>
               <div>Next</div>
               <div className="">
                 <MdOutlineNavigateNext size={30} />
               </div>
             </button>
           </div>
+          {/* position absolute  */}
           <div>
             <img
               src="/left-cloud.png"
@@ -96,6 +85,11 @@ const index = () => {
               alt=""
               srcset=""
             />
+          </div>
+          <div
+            onClick={() => router.replace("slide4")}
+            className="absolute top-[49%] right-2 text-darkBrown hidden md:block cursor-pointer">
+            <BsChevronRight size={30} />
           </div>
         </motion.div>
       </main>

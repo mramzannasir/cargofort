@@ -29,43 +29,58 @@ const index = () => {
           animate="animate"
           exit="exit"
           transition={{ duration: 0.8 }}
-          className=" card  contain  flex-col justify-center items-center">
+          className=" card  contain relative flex-col justify-center items-center">
           <div className="w-full md:w-[70%] xl:w-[80%]">
             <h1 className=" text-darkBrown sub-title text-center">
-              Which email shall we use for that offer?
+              You&apos;ve almost arrived at destination Best Price, just tell us
+              how much is your cargo worth:
             </h1>
           </div>
           <div className="my-[30px] sm:my-[35px] lg:my-[30px] w-[100%] flex justify-center items-center flex-col">
-            <div className="w-[95%] md:w-[60%] lg:w-[45%] flex-col flex ">
+            <div className="w-[95%] md:w-[60%] lg:w-[85%]  flex-col gap-3 flex lg:flex-row  ">
               <input
-                type="email"
-                className="rounded-[40px] px-4 text-[16px] md:text-[18px] text-darkBrown border-darkBrown border-[1.5px]  bg-white outline-none py-3 w-full"
-                placeholder="E-mail"
+                type="text"
+                className="rounded-[40px] px-4 text-[16px] md:text-[18px] text py-4 placeholder:text-darkBrown placeholder:opacity-50 bg-white border-none outline-none  h-full w-full "
+                placeholder="Insert Cargo value as per commercial invoice..."
               />
-            </div>
-            <div className="w-[95%] md:w-[60%] lg:w-[45%] flex-col flex mt-4 md:mt-6 relative ">
-              <div className="w-full flex justify-between items-center bg-white px-4 rounded-[40px] py-3 ">
-                <input
-                  className="sub text-darkBrown outline-none border-none w-full"
-                  placeholder="Name of Company"></input>
-                <div>
-                  <img src="/info.png" alt="" />
+              <div className="w-full lg:w-[45%]">
+                <div className="rounded-[40px] px-4 text-[16px] md:text-[18px] text py-4 bg-white border-none outline-none  h-full w-full flex justify-between items-center relative">
+                  <div className="sub text-darkBrown">Choose Currency</div>
+                  <div
+                    onClick={() => setShow(!show)}
+                    className="cursor-pointer">
+                    {show ? <BsChevronUp /> : <BsChevronDown />}
+                  </div>
+                  {show && (
+                    <div className="absolute w-[90%] top-8 mx-auto pt-4 left-4 rounded-b-xl overflow-hidden ">
+                      <motion.div
+                        variants={animationConfiguration}
+                        initial="initial"
+                        animate="animate"
+                        exit="exit"
+                        className="flex w-full justify-center mx-auto  bg-[#ffffffab] items-center flex-col">
+                        <div className="w-full bg-lightBrow text-darkBrown text-center cursor-pointer">
+                          EUR
+                        </div>
+                        <div className="w-full hover:bg-lightBrow text-darkBrown text-center cursor-pointer my-1">
+                          USD
+                        </div>{" "}
+                        <div className="w-full hover:bg-lightBrow text-darkBrown text-center cursor-pointer">
+                          GBP
+                        </div>
+                        <div className="w-full hover:bg-lightBrow text-darkBrown text-center cursor-pointer">
+                          BGN
+                        </div>
+                      </motion.div>
+                    </div>
+                  )}
                 </div>
               </div>
-              <p className="sub  text-darkBrown px-4 xl:hidden">
-                Enter the name of your company if you wish to earn bonuses,
-                rewards and special prices
-              </p>
-              <p className="sub w-[280px] hidden xl:block absolute text-darkBrown px-4 -top-[1rem] -right-[17rem]">
-                Enter the name of your company if you wish to earn bonuses,
-                rewards and special prices
-              </p>
             </div>
           </div>
-
           <div className="flex sm:justify-between justify-center gap-3  md:mt-0  items-center w-[98%]  sm:w-[90%] xl:mt-5">
             <button
-              onClick={() => router.push("slide8")}
+              onClick={() => router.push("slide9")}
               className={`flex gap-1 h-[3rem] w-[7rem] text-[#B67E4A] text-[16px] 
                  font-semibold justify-center items-center bg-backBrown  rounded-[40px]`}>
               <div className="">
