@@ -39,14 +39,14 @@ const index = () => {
             <div className="w-[95%] md:w-[60%] lg:w-[45%] flex-col flex ">
               <input
                 type="email"
-                className="rounded-[40px] px-4 text-[16px] md:text-[18px] text-darkBrown border-darkBrown border-[1.5px]  bg-white outline-none py-3 w-full"
+                className="rounded-[40px] placeholder:text-darkBrown placeholder:opacity-50 px-4 text-[16px] md:text-[18px] text-darkBrown border-darkBrown border-[1.5px]  bg-white outline-none py-3 w-full"
                 placeholder="E-mail"
               />
             </div>
             <div className="w-[95%] md:w-[60%] lg:w-[45%] flex-col flex mt-4 md:mt-6 relative ">
               <div className="w-full flex justify-between items-center bg-white px-4 rounded-[40px] py-3 ">
                 <input
-                  className="sub text-darkBrown outline-none border-none w-full"
+                  className="sub text-darkBrown placeholder:text-darkBrown placeholder:opacity-50 outline-none border-none w-full"
                   placeholder="Name of Company"></input>
                 <div>
                   <img src="/info.png" alt="" />

@@ -78,12 +78,12 @@ const index = () => {
               <div className="w-full rounded-[40px] outline-none border-none bg-white py-2 sm:py-3 4xl:py-3  flex items-center gap-3 justify-start px-5">
                 <div
                   onClick={() => setShow(3)}
-                  className={`relative  bg-lightBrow cursor-pointer hover:bg-selectBrown ${
+                  className={`relative  bg-lightBrow cursor-pointer  hover:bg-selectBrown ${
                     show === 3 ? "bg-selectBrown" : ""
                   } h-[29px] w-[29px] sm:h-[30px] sm:w-[30px] rounded-full`}>
                   <input
                     type="checkbox"
-                    className="appearance-none  cursor-pointer    rounded-full"></input>
+                    className="appearance-none  cursor-pointer     rounded-full"></input>
                   {show === 3 && (
                     <div className="absolute top-1 sm:top-[3px] left-[1px] sm:left-[2px] text-white">
                       <FiCheck size={27} />
@@ -107,12 +107,12 @@ const index = () => {
             <div className="w-[95%] md:w-[60%] lg:w-[85%] flex-col gap-3 flex lg:flex-row  ">
               <input
                 type="text"
-                className="rounded-[40px] px-4 text-[16px] md:text-[18px] text py-4 bg-white border-none outline-none  h-full w-full "
+                className="rounded-[40px] px-4 text-[16px] placeholder:text-darkBrown placeholder:opacity-50 md:text-[18px] text py-4 bg-white border-none outline-none  h-full w-full "
                 placeholder="From..."
               />
               <input
                 type="text"
-                className="rounded-[40px] px-4 text-[16px] md:text-[18px] text py-4 bg-white border-none outline-none  h-full w-full "
+                className="rounded-[40px] px-4 text-[16px] placeholder:text-darkBrown placeholder:opacity-50 md:text-[18px] text py-4 bg-white border-none outline-none  h-full w-full "
                 placeholder="To..."
               />
             </div>

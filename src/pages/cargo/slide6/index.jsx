@@ -58,7 +58,7 @@ const index = () => {
             <div className="w-[95%] md:w-[60%] lg:w-[85%] flex-col gap-3 flex lg:flex-row  ">
               <input
                 type="text"
-                className="rounded-[40px] px-4 text-[16px] md:text-[18px] text py-5 bg-white border-none outline-none  h-full w-full "
+                className="rounded-[40px] placeholder:text-darkBrown placeholder:opacity-50 px-4 text-[16px] md:text-[18px] text py-5 bg-white border-none outline-none  h-full w-full "
                 placeholder="Name of Cargo..."
               />
             </div>
