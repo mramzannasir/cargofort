@@ -46,7 +46,7 @@ const index = () => {
             <div className="w-[95%] md:w-[60%] lg:w-[45%] flex-col flex mt-4 md:mt-6 relative ">
               <div className="w-full flex justify-between items-center bg-white px-4 rounded-[40px] py-3 ">
                 <input
-                  className="sub placeholder:text-darkBrown placeholder:opacity-50 text-darkBrown outline-none border-none w-full"
+                  className="sub placeholder:text-darkBrown placeholder:opacity-50 s text-darkBrown outline-none border-none w-full"
                   placeholder="Name of Company"></input>
                 <div>
                   <img src="/info.png" alt="" />
